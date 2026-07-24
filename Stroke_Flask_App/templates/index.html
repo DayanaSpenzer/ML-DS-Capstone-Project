@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Risk Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="top-banner">Health Check</div>
+            <div class="header-icon">🩺</div>
+            <h1>Stroke Risk Prediction</h1>
+            <p class="subtitle">Enter a few health details to estimate stroke risk.</p>
+
+            <form action="/predict" method="POST" class="form-grid">
+                <label for="age">Age</label>
+                <input type="number" step="any" name="age" id="age" required>
+
+                <label for="bp">Do you have hypertension?</label>
+                <input list="Hypertension" name="bp" id="bp" placeholder="Yes or No" required>
+                <datalist id="Hypertension">
+                    <option value="Yes"></option>
+                    <option value="No"></option>
+                </datalist>
+
+                <label for="hrd">Do you have a heart disease?</label>
+                <input list="Heart Disease" name="hrd" id="hrd" placeholder="Yes or No" required>
+                <datalist id="Heart Disease">
+                    <option value="Yes"></option>
+                    <option value="No"></option>
+                </datalist>
+
+                <label for="glu">Blood Glucose Level</label>
+                <input type="number" step="any" name="glu" id="glu" required>
+
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

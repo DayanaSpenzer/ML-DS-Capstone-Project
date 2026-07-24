@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card result-card">
+            <div class="top-banner">Assessment Complete</div>
+            <div class="header-icon">📋</div>
+            <h1>Prediction Result</h1>
+            <div class="risk-badge {{ badge_class }}">{{ status }}</div>
+            <div class="progress-bar">
+                <div class="progress-fill {{ badge_class }}" style="width: {{ progress_width }};"></div>
+            </div>
+            <p class="result-text">{{ prediction }}</p>
+            <p class="disclaimer">This is an AI-based estimate and not a medical diagnosis. Please consult a qualified healthcare professional for advice.</p>
+            <a href="/" class="btn-link">Predict Again</a>
+        </div>
+    </div>
+</body>
+</html>
